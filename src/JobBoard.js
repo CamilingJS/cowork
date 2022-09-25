@@ -1,5 +1,5 @@
 export default function JobBoard() {
-    return <></>;
+    return <>Board</>;
   }
 
   
