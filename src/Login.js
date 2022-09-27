@@ -17,7 +17,7 @@ export default function Login() {
         alignItems:"center",
         justifyContent:"center"
         }} >
-        <Box sx={{width:"500px", 
+        <Box sx={{width:"400px", 
         height:"300px",
         backgroundColor:"white", 
         display:"flex",
@@ -32,8 +32,8 @@ export default function Login() {
         Log in
         </Typography>
         
-        <FormControl>
-            <Input
+        <FormControl sx={{width: "80%"}} >
+            <LoginInput
                 id="email-username"
                 placeholder="Email or Username"
                 startAdornment={
@@ -44,16 +44,12 @@ export default function Login() {
             />
         </FormControl>
             
-        <FormControl>
-            <Input id="password" placeholder="Password" />
+        <FormControl sx={{width: "80%"}} >
+            <LoginInput id="password" placeholder="Password" />
         </FormControl>
     
-    
-         <Box sx={{ marginTop:"24px", marginBottom:'24px' }} >
-         <PrimaryButton sx={{borderRadius:"50px", width:"250px", height:"30px"}}  variant="contained">Continue with Email</PrimaryButton>
-         </Box>           
-
-        
+         <PrimaryButton sx={{margin:"24px 0"}} variant="contained">Continue with Email</PrimaryButton>
+                  
         </Box>
       </Box>
       
