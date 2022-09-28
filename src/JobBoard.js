@@ -1,27 +1,22 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Button from '@mui/material/Button';
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
-import { styled, alpha } from '@mui/material/styles';
-import { SECONDARY_NAVY, GREY } from './StyledComponents';
-
-import Navbar from './NavBar'
 import { Typography } from '@mui/material';
+
+import {  GREY } from './StyledComponents';
+import Navbar from './NavBar'
+
 
 function LeftPanel(){
   return(
     <>
     <Box sx={{width:'20%', display:'flex', flexDirection:'column', alignItems:'start'}} >
-      <Typography sx={{fontWeight:'bold', color:`${GREY}`}} variant="h5" gutterBottom>
+      <Typography sx={{fontWeight:'bold', color:`${GREY}`, fontSize:'xx-large'}} variant="h5" gutterBottom>
         Find Work
       </Typography>
-      <Typography sx={{mt:'48px'}} >Categories</Typography>
-      <Typography  >Front End Dev</Typography>
-      <Typography  >Design</Typography>
-      <Typography  >E-Ecommerce</Typography>
+      <Typography sx={{mt:'48px', fontWeight:'bold', color:`${GREY}`, padding:'8px 0', fontSize:'x-large'}} >Categories</Typography>
+      <Typography sx={{color:`${GREY}`, padding:'8px 0', fontSize:'medium'}} >Front End Dev</Typography>
+      <Typography sx={{color:`${GREY}`, padding:'8px 0', fontSize:'medium'}} >Design</Typography>
+      <Typography sx={{color:`${GREY}`, padding:'8px 0', fontSize:'medium'}} >E-Ecommerce</Typography>
       
     </Box>
     </>
@@ -31,16 +26,15 @@ function LeftPanel(){
 function RightPanel(){
   return(
     <>
-    <Box sx={{width:'80%'}}>
-      RightPanel
+    <Box sx={{width:'80%', display:'flex', flexDirection:'column'}}>
+      <Box>
+        Search Bar Goes Here
+      </Box>
+      <Box sx={{mt:'88px', height:'100vh', backgroundColor:'white', borderRadius:'4px'}} ></Box>
     </Box>
     </>
-  )
-    
-  
+  ) 
 }
-
-
 
 export default function JobBoard() {
     return <>
