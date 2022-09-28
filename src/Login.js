@@ -8,7 +8,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 
 
 
-export default function Login() {
+export default function Login({setLoggedIn}) {
   return (
     <>
       <Box sx={{width:"100%", 
@@ -48,7 +48,9 @@ export default function Login() {
             <LoginInput id="password" placeholder="Password" />
         </FormControl>
     
-         <PrimaryButton sx={{margin:"24px 0"}} variant="contained">Continue with Email</PrimaryButton>
+         <PrimaryButton sx={{margin:"24px 0"}} variant="contained"
+          onClick={()=>{setLoggedIn(true)}}
+         >Continue with Email</PrimaryButton>
                   
         </Box>
       </Box>

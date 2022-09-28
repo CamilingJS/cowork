@@ -3,7 +3,9 @@ import { styled } from "@mui/material/styles";
 import Input from "@mui/material/Input";
 
 const PRIMARY_GREEN = "#39B54A";
-const SECONDARY_NAVY = "#2B5468";
+export const SECONDARY_NAVY = "#2B5468";
+export const GREY = '#5D5C5C'; 
+
 
 export const PrimaryButton = styled(Button)(() => ({
   background: PRIMARY_GREEN,
