@@ -25,7 +25,8 @@ export default function Navbar() {
           </Search>
           
           <Box>
-            <Button color="inherit" sx={{mr:"32px"}} >Find a Job</Button>
+            <Button color="inherit" sx={{mr:"32px"}} >Find a Referral</Button>
+            <Button color="inherit" sx={{mr:"32px"}} >Refer a Job</Button>
             <Button color="inherit">Login</Button>
           </Box>
           
