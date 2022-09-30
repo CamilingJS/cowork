@@ -2,8 +2,12 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
 
+
+
+
 import {  GREY } from './StyledComponents';
 import Navbar from './NavBar'
+import BodySearch from './BodySearch';
 
 
 function LeftPanel(){
@@ -27,10 +31,10 @@ function RightPanel(){
   return(
     <>
     <Box sx={{width:'80%', display:'flex', flexDirection:'column'}}>
-      <Box>
-        Search Bar Goes Here
-      </Box>
-      <Box sx={{mt:'88px', height:'100vh', backgroundColor:'white', borderRadius:'4px'}} ></Box>
+      <BodySearch />
+          
+
+    <Box sx={{mt:'48px', height:'100vh', backgroundColor:'white', borderRadius:'4px'}} ></Box>
     </Box>
     </>
   ) 
@@ -39,7 +43,7 @@ function RightPanel(){
 export default function JobBoard() {
     return <>
       <Navbar />
-      <Box sx={{display:'flex', flexDirection:'row', justifyContent:'center', padding:'46px 10%'}}>
+      <Box sx={{display:'flex', flexDirection:'row', justifyContent:'center', padding:'40px 10%'}}>
         <LeftPanel  />
         <RightPanel />
       </Box>
