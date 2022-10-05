@@ -8,6 +8,7 @@ import { Typography } from '@mui/material';
 import {  GREY } from './StyledComponents';
 import Navbar from './NavBar'
 import BodySearch from './BodySearch';
+import JobList from './JobList';
 
 
 function LeftPanel(){
@@ -31,10 +32,11 @@ function RightPanel(){
   return(
     <>
     <Box sx={{width:'80%', display:'flex', flexDirection:'column'}}>
-      <BodySearch />
-          
+      <BodySearch /> 
 
-    <Box sx={{mt:'48px', height:'100vh', backgroundColor:'white', borderRadius:'4px'}} ></Box>
+    <Box sx={{mt:'48px', borderRadius:'4px'}} >
+      <JobList />   
+    </Box>
     </Box>
     </>
   ) 
