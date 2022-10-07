@@ -16,6 +16,15 @@ export const PrimaryButton = styled(Button)(() => ({
 
 }));
 
+export const SecondaryButton = styled(Button)(() => ({
+  background: "white",
+  border: `1px solid ${PRIMARY_GREEN}`,
+  borderRadius: "50px",
+  width: "80%", 
+  height:"30px"
+
+}));
+
 export const LoginInput = styled(Input)(()=>({
     border: `1px solid ${PRIMARY_GREEN}`,
     borderRadius: "5px",

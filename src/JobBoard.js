@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react'; 
 import Box from '@mui/material/Box';
 
 
@@ -9,14 +10,15 @@ import CategoryMenu from './CategoryMenu'
 import { Typography } from '@mui/material';
 
 
-function RightPanel({allJobs}){
+function RightPanel({jobs, selectedCategory}){
+  console.log(jobs)
   return(
     <>
     <Box sx={{width:'80%', display:'flex', flexDirection:'column'}}>
       <BodySearch /> 
 
     <Box sx={{mt:'48px', borderRadius:'4px'}} >
-      <JobList allJobs={allJobs} />   
+      <JobList jobs={jobs.filter(job => job.category === selectedCategory)} />   
     </Box>
     </Box>
     </>
@@ -24,6 +26,8 @@ function RightPanel({allJobs}){
 }
 
 export default function JobBoard({allJobs}) {
+
+  const [selectedCategory, setSelectedCategory] = useState("")
 
   const categories = []; 
   for(let job of allJobs){
@@ -37,12 +41,17 @@ export default function JobBoard({allJobs}) {
       <Navbar />
       <Box sx={{display:'flex', flexDirection:'row', justifyContent:'center', padding:'40px 10%'}}>
         <Box sx={{display:'flex', flexDirection:'column', alignItems:'start'}} >
-          <Typography variant="h6" sx={{fontWeight:'bold', margin:'0 24px 0 0'}} gutterBottom >Find Work</Typography>
-          <Typography variant="subtitle1" sx={{mt:'48px', fontWeight:'bold'}} >Categories</Typography>
-          <CategoryMenu categories={categories} />
+          <Typography variant="h5" sx={{fontWeight:'bold', margin:'0 24px 0 0'}} gutterBottom >Find Work</Typography>
+          <Typography variant="h6" sx={{mt:'48px', fontWeight:'bold'}} >Categories</Typography>
+          <CategoryMenu 
+            selectedCategory={selectedCategory} 
+            setSelectedCategory={setSelectedCategory}
+            categories={categories} />
         </Box>
         
-        <RightPanel allJobs={allJobs} />
+        <RightPanel 
+          selectedCategory={selectedCategory}
+          jobs={allJobs} />
       </Box>
     </>);
   }

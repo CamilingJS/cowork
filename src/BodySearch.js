@@ -1,6 +1,5 @@
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from "@mui/material/styles";
-import Input from "@mui/material/Input";
 import InputBase from '@mui/material/InputBase';
 
 import { PRIMARY_GREEN } from './StyledComponents';
