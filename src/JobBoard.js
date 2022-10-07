@@ -1,55 +1,50 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import { Typography } from '@mui/material';
 
 
-
-
-import {  GREY } from './StyledComponents';
 import Navbar from './NavBar'
 import BodySearch from './BodySearch';
 import JobList from './JobList';
+import CategoryMenu from './CategoryMenu'
+import { Typography } from '@mui/material';
 
 
-function LeftPanel(){
-  return(
-    <>
-    <Box sx={{width:'20%', display:'flex', flexDirection:'column', alignItems:'start'}} >
-      <Typography sx={{fontWeight:'bold', color:`${GREY}`, fontSize:'xx-large'}} variant="h5" gutterBottom>
-        Find Work
-      </Typography>
-      <Typography sx={{mt:'48px', fontWeight:'bold', color:`${GREY}`, padding:'8px 0', fontSize:'x-large'}} >Categories</Typography>
-      <Typography sx={{color:`${GREY}`, padding:'8px 0', fontSize:'medium'}} >Front End Dev</Typography>
-      <Typography sx={{color:`${GREY}`, padding:'8px 0', fontSize:'medium'}} >Design</Typography>
-      <Typography sx={{color:`${GREY}`, padding:'8px 0', fontSize:'medium'}} >E-Ecommerce</Typography>
-      
-    </Box>
-    </>
-  )
-}
-
-function RightPanel(){
+function RightPanel({allJobs}){
   return(
     <>
     <Box sx={{width:'80%', display:'flex', flexDirection:'column'}}>
       <BodySearch /> 
 
     <Box sx={{mt:'48px', borderRadius:'4px'}} >
-      <JobList />   
+      <JobList allJobs={allJobs} />   
     </Box>
     </Box>
     </>
   ) 
 }
 
-export default function JobBoard() {
-    return <>
+export default function JobBoard({allJobs}) {
+
+  const categories = []; 
+  for(let job of allJobs){
+    if(!categories.includes(job.category)){
+      categories.push(job.category)
+    }
+  }
+  
+  
+    return (<>
       <Navbar />
       <Box sx={{display:'flex', flexDirection:'row', justifyContent:'center', padding:'40px 10%'}}>
-        <LeftPanel  />
-        <RightPanel />
+        <Box sx={{display:'flex', flexDirection:'column', alignItems:'start'}} >
+          <Typography variant="h6" sx={{fontWeight:'bold', margin:'0 24px 0 0'}} gutterBottom >Find Work</Typography>
+          <Typography variant="subtitle1" sx={{mt:'48px', fontWeight:'bold'}} >Categories</Typography>
+          <CategoryMenu categories={categories} />
+        </Box>
+        
+        <RightPanel allJobs={allJobs} />
       </Box>
-    </>;
+    </>);
   }
 
   
