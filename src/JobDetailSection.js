@@ -2,6 +2,7 @@ import { Typography, Box } from '@mui/material';
 import {Divider} from '@mui/material';
 import { FiMapPin } from "react-icons/fi";
 
+
 import {GREY, PRIMARY_GREEN} from './StyledComponents'
 
 
