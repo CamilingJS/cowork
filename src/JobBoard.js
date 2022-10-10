@@ -18,7 +18,16 @@ function RightPanel({jobs, selectedCategory}){
       <BodySearch /> 
 
     <Box sx={{mt:'48px', borderRadius:'4px'}} >
-      <JobList jobs={jobs.filter(job => job.category === selectedCategory)} />   
+      <JobList
+        jobs={
+          jobs.filter((job)=>{
+            if(!selectedCategory){
+              return true 
+            }
+            return job.category === selectedCategory
+          })
+        }
+      />   
     </Box>
     </Box>
     </>

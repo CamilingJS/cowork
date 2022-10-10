@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -23,9 +24,18 @@ export default function Navbar() {
           </Search>
           
           <Box>
+            <Link style={{textDecoration:'none', color:'white'}} to='/jobs' >
             <Button color="inherit" sx={{mr:"32px"}} >Find a Referral</Button>
+            </Link>
+            
+            <Link style={{textDecoration:'none', color:'white'}} to='/job1' >
             <Button color="inherit" sx={{mr:"32px"}} >Refer a Job</Button>
+            </Link>
+           
+            <Link style={{textDecoration:'none', color:'white'}} to='/' >
             <Button color="inherit">Login</Button>
+            </Link>
+            
           </Box>
           
         </Toolbar>

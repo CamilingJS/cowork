@@ -6,7 +6,7 @@ import { Typography, Box } from '@mui/material';
 
 import {PrimaryButton, SecondaryButton, GREY, PRIMARY_GREEN } from './StyledComponents'
 
-export default function JobDetailAside(){
+export default function JobDetailAside({selectedJob}){
     return(
         <>
         <Paper sx={{width:'1200px', height:'50%'}}>
@@ -15,14 +15,17 @@ export default function JobDetailAside(){
             <Divider sx={{margin:'16px 0', width:'100%'}} />
             <Box sx={{padding:'0 32px'}}>
             <Typography sx={{color:`${GREY}`, textAlign:'left', paddingBottom:'8px'}} >About the client</Typography>
-            <Typography sx={{color:`${GREY}`, textAlign:'left', paddingBottom:'8px'}} ><FaCheckCircle /> Client Verified</Typography>
-            <Typography sx={{color:`${GREY}`, textAlign:'left', paddingBottom:'8px'}} ><FiMapPin/> United States</Typography>
+            <Typography sx={{color:`${GREY}`, textAlign:'left', paddingBottom:'8px'}} ><FaCheckCircle /> Client {selectedJob.verified ? "Verified": "not Verified"}</Typography>
+            <Typography sx={{color:`${GREY}`, textAlign:'left', paddingBottom:'8px'}} ><FiMapPin/> {selectedJob.location}</Typography>
             </Box>
             <Divider sx={{margin:'16px 0', width:'100%'}} />
             <Box sx={{padding:'0 32px'}}>
             <Typography sx={{color:`${GREY}`, textAlign:'left', fontWeight:'bold', paddingBottom:'8px'}} >Job Link</Typography>
-            <Typography sx={{color:`${GREY}`, textAlign:'left', backgroundColor:'whitesmoke', border:`1px solid whitesmoke`, padding:'0 8px', marginBottom:'8px'}} >www.jaycamp.dev</Typography>
-            <Typography sx={{color:`${PRIMARY_GREEN}`, textAlign:'left', fontWeight:'bold'}} >Copy Link</Typography>
+            <Typography sx={{color:`${GREY}`, textAlign:'left', backgroundColor:'whitesmoke', border:`1px solid whitesmoke`, padding:'0 8px', marginBottom:'8px'}} >{selectedJob.link}</Typography>
+            <a style={{textDecoration:'none'}} href={selectedJob.link} >
+            <Typography sx={{color:`${PRIMARY_GREEN}`, textAlign:'left', fontWeight:'bold'}} >Go To Link</Typography>
+            </a>
+            
             </Box>
             <Divider sx={{margin:'16px 0', width:'100%'}} />
         </Paper>
